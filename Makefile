@@ -10,4 +10,6 @@ migratedown:
 	migrate -path db/migration -database "postgresql://root:postgres@localhost:5432/simple_bank?sslmode=disable" --verbose down
 sqlc: 
 	sqlc generate
-.PHONY: postgres-docker createdb dropdb migrateup migratedown sqlc
+test:
+	go test -v -cover ./...
+.PHONY: postgres-docker createdb dropdb migrateup migratedown sqlc test
