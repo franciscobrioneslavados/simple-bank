@@ -18,6 +18,10 @@ docker exec -it postgres12-alpine psql -U postgres
 ```
 docker exec -it postgres12-alpine /bin/sh
 ```
+* exec image and conect to database
+```
+docker exec -it postgres12-alpine psql -U root -d simple_bank
+```
 * logs image
 ```
 docker logs postgres12-alpine
