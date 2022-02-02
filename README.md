@@ -51,3 +51,9 @@ make <command_in_list_Makefile>
 
 ## Choose the correct Go Framework & HTTP Routers
 ![WW](images/PW.png?raw=true "PW")
+
+
+## Mock Databae wint mockgen
+```
+mockgen -package mockdb -destination db/mock/store.go  github.com/franciscobrioneslavados/simple-bank/db/sqlc Store
+```
