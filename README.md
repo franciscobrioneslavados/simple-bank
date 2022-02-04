@@ -57,3 +57,18 @@ make <command_in_list_Makefile>
 ```
 mockgen -package mockdb -destination db/mock/store.go  github.com/franciscobrioneslavados/simple-bank/db/sqlc Store
 ```
+
+
+## Docker
+* Build
+```
+docker build -t simplebank:latest .   
+```
+* Run
+```
+docker run --name simplebank -p 8080:8080 simplebank:latest
+```
+* Remove "none" images (BONUS)
+``` 
+docker rmi $(docker images --filter “dangling=true” -q --no-trunc)
+```
