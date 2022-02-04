@@ -101,3 +101,9 @@ result-like:
 ``` 
 docker rmi $(docker images --filter “dangling=true” -q --no-trunc)
 ```
+
+## Secrets
+* Generate a random 32 bits to token symmentric key
+```
+openssl rand -hex 64 | head -c 32
+```
