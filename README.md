@@ -107,3 +107,9 @@ docker rmi $(docker images --filter “dangling=true” -q --no-trunc)
 ```
 openssl rand -hex 64 | head -c 32
 ```
+
+## AWS
+* Login to ECR
+```
+aws ecr get-login-password | docker login --username AWS --password-stdin <aws_account_id>.dkr.ecr.<region>.amazonaws.com
+```
