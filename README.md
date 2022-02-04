@@ -64,9 +64,38 @@ mockgen -package mockdb -destination db/mock/store.go  github.com/franciscobrion
 ```
 docker build -t simplebank:latest .   
 ```
+* Create a docker Networ to joun booth images [psql|golang]
+```
+docker network create bank-network
+```
+* Connect postgres image to bank network
+```
+docker network connect bank-network postgres12-alpine
+```
 * Run
 ```
-docker run --name simplebank -p 8080:8080 simplebank:latest
+docker run --name simplebank --network bank-network -p 8080:8080 -e GIN_MODE=release -e DB_SOURCE="postgresql://root:postgres@postgres12-alpine:5432/simple_bank?sslmode=disable" simplebank:latest
+```
+* network inspect
+```
+docker network inspect bank-network
+result-like: 
+"Containers": {
+            "bb00cdb8bbf57076ca4de4e14ff6480468867df6e04f0b5f208a21d31dc35152": {
+                "Name": "postgres12-alpine",
+                "EndpointID": "80c448c62f1c9a793397176f158beb34d5036996d82f683d8d822dc0ea0df0bf",
+                "MacAddress": "02:42:ac:14:00:02",
+                "IPv4Address": "172.20.0.2/16",
+                "IPv6Address": ""
+            },
+            "dd2af5167efa181faa720020e7a195dc31f86f9056acda273f12e0f7fa115de3": {
+                "Name": "simplebank",
+                "EndpointID": "d642ab8da9671b84a796cda9be0bd687112355ed5e7f01e41484dad280ae449c",
+                "MacAddress": "02:42:ac:14:00:03",
+                "IPv4Address": "172.20.0.3/16",
+                "IPv6Address": ""
+            }
+        },
 ```
 * Remove "none" images (BONUS)
 ``` 
