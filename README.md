@@ -1,6 +1,8 @@
 # simple-bank
 Project in GO following the UDEMY course [Backend Master Class [Golang + PostgreSQL + Kubernetes]](https://www.udemy.com/course/backend-master-class-golang-postgresql-kubernetes/)
 
+[Github Repo Course](https://github.com/techschool/simplebank)
+
 ### Docker commands
 * pull postgres image
 ```
