@@ -14,7 +14,7 @@ docker run --name postgres12-alpine -p 5432:5432 -e POSTGRES_USER=root -e POSTGR
 ```
 docker exec -it postgres12-alpine psql -U postgres
 ```
-* exec image witn /bin/sh
+* exec image with /bin/sh
 ```
 docker exec -it postgres12-alpine /bin/sh
 ```
