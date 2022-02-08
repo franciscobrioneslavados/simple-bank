@@ -1,5 +1,5 @@
 # simple-bank
-Project in GO following the UDEMY course
+Project in GO following the UDEMY course [Backend Master Class [Golang + PostgreSQL + Kubernetes]](https://www.udemy.com/course/backend-master-class-golang-postgresql-kubernetes/)
 
 ### Docker commands
 * pull postgres image
@@ -14,7 +14,7 @@ docker run --name postgres12-alpine -p 5432:5432 -e POSTGRES_USER=root -e POSTGR
 ```
 docker exec -it postgres12-alpine psql -U postgres
 ```
-* exec image witn /bin/sh
+* exec image with /bin/sh
 ```
 docker exec -it postgres12-alpine /bin/sh
 ```
